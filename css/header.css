@@ -1,5 +1,5 @@
 @charset "utf-8";
-.header.active{
+.header.active {
   top: -61px;
 }
 
@@ -417,7 +417,8 @@
   background-color: transparent;
   line-height: 19px;
 }
-.join-bt:hover , .join-bt.active {
+.join-bt:hover,
+.join-bt.active {
   color: #76bd42;
 }
 .join-bt-icon {
@@ -430,7 +431,7 @@
   vertical-align: 2px;
   margin-left: 2px;
 }
-.join-bt.active .join-bt-icon{
+.join-bt.active .join-bt-icon {
   background-position: 0px -8px;
 }
 .join-list,
@@ -465,7 +466,7 @@
   border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
 .join-list > li > a:hover,
-.more-menu-list > li > a:hover{
+.more-menu-list > li > a:hover {
   font-weight: 700;
   color: #333;
   border-bottom: 2px solid #333;
@@ -498,24 +499,91 @@
   vertical-align: 2px;
 }
 /* 더보기 active기능 */
-.more-menu-bt.active > span{
+.more-menu-bt.active > span {
   visibility: hidden;
 }
-.more-menu-bt::after{
+.more-menu-bt::after {
   content: "접기";
-position: absolute;
-top: 0;
-left: 9px;
-display: inline-block;
-width: 30px;
-height: 10px;
-color: #76bd42;
-display: none;
+  position: absolute;
+  top: 0;
+  left: 9px;
+  display: inline-block;
+  width: 30px;
+  height: 10px;
+  color: #76bd42;
+  display: none;
 }
-.more-menu-bt.active::after{
+.more-menu-bt.active::after {
   display: block;
-
 }
-.more-menu-bt.active .more-menu-icon{
+.more-menu-bt.active .more-menu-icon {
   background-position: 0 -6px;
 }
+/* 헤더메인 오른쪽 */
+.header-main-right {
+  position: relative;
+  display: block;
+  float: right;
+}
+.search-form {
+  position: relative;
+  display: block;
+  float: left;
+}
+.search-txt {
+  position: relative;
+  display: block;
+  width: 320px;
+  height: 40px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 45px;
+  border: 1px solid #f7f7f7;
+  line-height: 40px;
+  font-size: 13px;
+}
+.search-txt:focus {
+  background-color: #fff;
+  border: 1px solid #76bd42;
+  color: #333;
+}
+.search-bt {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: url("../images/btnSearch.png") no-repeat;
+  cursor: pointer;
+  font-size: 0;
+  display: block;
+  border: 0;
+}
+.buket{
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../images/btnCart.png") no-repeat;
+  float: left;
+  margin-left: 25px;
+  margin-top: 6px;
+}
+.buket-count{
+  position: absolute;
+  right: -4px;
+  top: -5px;
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50px;
+  text-align: center;
+  color: #fff;
+  background-color: #76bd42;
+  line-height: 18px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
