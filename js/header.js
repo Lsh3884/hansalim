@@ -1,5 +1,6 @@
 window.addEventListener("load", function () {
   const header = this.document.querySelector(".header");
+  const wrap = this.document.querySelector(".wrap");
   //    console.log(header);
   let scy = 0;
   console.log(scy);
@@ -10,8 +11,10 @@ window.addEventListener("load", function () {
     // console.log(scy);
     if (scy > 0) {
       header.classList.add("active");
+      wrap.classList.add(".active");
     } else {
       header.classList.remove("active");
+      wrap.classList.remove(".active");
     }
   });
   //  펼침목록 보기 기능
@@ -59,6 +62,8 @@ window.addEventListener("load", function () {
         item.style.display = "none";
       });
       const css = getComputedStyle(list).display;
+      console.log(css);
+
       if (css === "none") {
         list.style.display = "block";
         bt.classList.add("active");
@@ -71,8 +76,8 @@ window.addEventListener("load", function () {
   listToggle(menuBt, menuList);
   listToggle(joinBt, joinList);
   listToggle(centerBt, centerList);
-  // =============================================
-  // 전체메뉴 펼침기능
+  // ==================
+  // 전체 메뉴 펼침 기능
   const allMenu = this.document.querySelector(".all-menu");
   const cateList = this.document.querySelector(".cate-list");
   const cateListWrap = this.document.querySelector(".all-menu-cate-wrap");
@@ -80,14 +85,20 @@ window.addEventListener("load", function () {
   const themeList = this.document.querySelector(".theme-list");
   let isMenuOpen = false;
   cateList.addEventListener("mouseleave", function () {
-    // cateList마우스리브 했을 때
+    // cateList마우스리브 했을때
     if (!isMenuOpen) {
       allMenu.classList.remove("active");
     }
   });
-  cateListWrap.addEventListener("mouseenter" , function(){
-    allMenu.classList.add("active")
-  })
+  cateListWrap.addEventListener("mouseleave", function () {
+    // cateListWrap 했을때
+    if (!isMenuOpen) {
+      allMenu.classList.remove("active");
+    }
+  });
+  cateListWrap.addEventListener("mouseenter", function () {
+    allMenu.classList.add("active");
+  });
   cateList.addEventListener("mouseenter", function () {
     allMenu.classList.add("active");
   });
@@ -97,20 +108,20 @@ window.addEventListener("load", function () {
   themeList.addEventListener("mouseenter", function () {
     allMenu.classList.remove("active");
   });
-  // 서브 카테고리
+  // 서브 카테고리 보여주기 기능
   const cateLists = this.document.querySelectorAll(".cate-list > li");
   const cateDepth2 = this.document.querySelectorAll(".cate-depth2-list");
   cateLists.forEach(function (item, index) {
     // console.log(item);
-    // console.log(index);
     item.addEventListener("mouseenter", function () {
       cateDepth2.forEach(function (itemSub, indexSub) {
-        itemSub.style.display = "none"
+        // console.log(itemSub);
+        itemSub.style.display = "none";
         if (indexSub === index) {
           itemSub.style.display = "block";
         }
       });
     });
   });
-  // ========================================end
+  // ====================end
 });

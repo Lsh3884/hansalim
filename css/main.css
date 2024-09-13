@@ -39,6 +39,11 @@ body {
   color: #000;
   height: 3000px;
 }
+.wrap{
+  position: relative;
+  display: block;
+  padding-top: 128px;
+}
 /* 공통요소 */
 .clearfix::after {
     content: "";
