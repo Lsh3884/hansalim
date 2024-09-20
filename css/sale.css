@@ -1,1 +1,11 @@
 @charset "utf-8";
+/* 알뜰상품  */
+.sale {
+    position: relative;
+    display: block;
+    background-color: #f8f9ff;
+  }
+  .sale .slide-control {
+    margin-top: 100px;
+  }
+  
