@@ -477,11 +477,11 @@
             <!-- 헤더 메인의 오른쪽 -->
             <div class="header-main-right clearfix">
               <form class="search-form">
-                <input type="text" class="search-txt" placeholder="무엇을 찾아드릴까요 ?" />
+                <input type="text" class="search-txt" placeholder="무엇을 찾아드릴까요?" />
                 <input type="text" class="search-bt" />
               </form>
-              <a href="#" class="buket">
-                <span class="buket-count">0</span>
+              <a href="#" class="bucket">
+                <span class="bucket-count">0</span>
               </a>
             </div>
           </div>
@@ -493,7 +493,7 @@
           <!-- 비주얼 스와이퍼 슬라이드 -->
           <div class="swiper sw-visual">
             <div class="swiper-wrapper" id="data-visual">
-              <!-- 외부 비주얼 데이터 (json) -->
+              <!-- 외부 비주얼 데이터(json) -->
             </div>
           </div>
         </div>
@@ -513,12 +513,10 @@
           <h2 class="section-title"><b>이 물품은 어떠세요?</b></h2>
           <div class="good-wrap" id="data-today">
             <!-- js출력 -->
-            
           </div>
           <div class="good-wrap no-mb" id="data-today2">
             <!-- js출력 -->
           </div>
-
         </div>
       </section>
       <!-- 알뜰물품 -->
@@ -530,7 +528,7 @@
                 놓치기 아쉬운<br />
                 <b>알뜰물품</b>
               </h2>
-              <p class="section-title-txt"></p>
+              <p class="section-title-txt">
                 가격인하 물품을 <br />
                 지금 바로 이용해 보세요
               </p>
@@ -542,16 +540,16 @@
               </div>
             </div>
             <div class="layout-right">
-              <!-- 알뜰물품 슬라이드 영역 -->
-               <div class="good-slide" id="data-sale">
-                <!-- js -->
-               </div>
+              <!-- 알뜰물품 슬라이드 -->
+              <div class="good-slide" id="data-sale">
+                <!-- 외부 알뜰물품 데이터 연동 출력 js -->
+              </div>
             </div>
           </div>
         </div>
       </section>
-       <!-- 새물품 -->
-       <section class="new">
+      <!-- 새물품 -->
+      <section class="new">
         <div class="container">
           <h2 class="section-title">
             반가운<br />
@@ -559,43 +557,66 @@
             <a href="#" class="section-bt">더보기</a>
           </h2>
           <!-- 새물품 내용 -->
-           <div class="new-wrap clearfix">
+          <div class="new-wrap clearfix">
             <div class="new-left" id="data-new">
               <!-- js출력 -->
             </div>
             <div class="new-right" id="data-new-list">
               <!-- js출력 -->
             </div>
-           </div>
+          </div>
         </div>
       </section>
-        <!-- 추천물품 -->
-        <section class="recommend">
-          <div class="container">
-            <div class="layout-wrap clearfix">
-              <div class="layout-left">
-                <h2 class="section-title section-bar">
-                  <b class="blue">조합원</b>님을 위한 <br />
-                  <b>추천물품</b>
-                </h2>
-                <p class="section-title-txt">여름방학 삼시세끼 걱정 없어요!</p>
-                <div class="slide-control">
-                  <div class="slide-pg"></div>
-                  <button class="slide-prev">이전</button>
-                  <button class="slide-next">다음</button>
-                </div>
+      <!-- 추천물품 -->
+      <section class="recommend">
+        <div class="container">
+          <div class="layout-wrap clearfix">
+            <div class="layout-left">
+              <h2 class="section-title section-bar">
+                <b class="blue">조합원</b>님을 위한 <br />
+                <b>추천물품</b>
+              </h2>
+              <p class="section-title-txt">여름방학 삼시세끼 걱정 없어요!</p>
+              <div class="slide-control">
+                <div class="slide-pg"></div>
+                <button class="slide-prev">이전</button>
+                <button class="slide-next">다음</button>
               </div>
-              <div class="layout-right">
-                <!-- 추천물품 슬라이드 -->
-                <div class="good-slide" id="data-recommend">
-                  <!-- 외부 추천물품 데이터 연동 출력 js -->
-                </div>
+            </div>
+            <div class="layout-right">
+              <!-- 추천물품 슬라이드 -->
+              <div class="good-slide" id="data-recommend">
+                <!-- 외부 추천물품 데이터 연동 출력 js -->
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
       <!-- 인기 물품 -->
-      <section class="popular"></section>
+      <section class="popular">
+        <div class="container">
+          <h2 class="section-title">
+            지금 가장 많이 이용하는 <b>인기물품</b>
+            <a href="#" class="popular-more">반려동물 물품 더보기</a>
+          </h2>
+          <!-- 인기 물품 카테고리 아이콘 -->
+          <div class="popular-cate clearfix">
+            <div class="popular-slide-prev">
+              <span>이전</span>
+            </div>
+            <div class="popular-slide" id="data-popular-icon">
+              <!-- 외부 인기물품 아이콘 데이터 연동 출력 js -->
+            </div>
+            <div class="popular-slide-next">
+              <span>다음</span>
+            </div>
+          </div>
+          <!-- 인기 물품 목록 -->
+          <div class="good-wrap no-mb" id="data-popular">
+            <!-- 외부 인기물품 데이터 연동 출력 js -->
+          </div>
+        </div>
+      </section>
       <!-- 브랜드관 -->
       <section class="brand"></section>
       <!-- 배너 -->
