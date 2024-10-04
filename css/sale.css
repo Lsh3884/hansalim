@@ -57,13 +57,13 @@
   float: right;
   width: calc(50% - 8px);
 }
-.new-box{
+.new-box {
   position: relative;
   display: block;
   width: calc(50% - 8px);
   /* float: left; */
 }
-.new-box-img{
+.new-box-img {
   position: relative;
   display: block;
   width: 100%;
@@ -71,7 +71,7 @@
   overflow: hidden;
   margin-bottom: 15px;
 }
-.new-box-img img{
+.new-box-img img {
   width: 102%;
   position: absolute;
   left: 50%;
@@ -90,14 +90,14 @@
   margin-bottom: 10px;
 }
 /* 홀수흫 왼쪽 */
-.new-right .new-box:nth-child(2n + 1){
+.new-right .new-box:nth-child(2n + 1) {
   float: left;
 }
 /* 짝수를 오른쪽 */
-.new-right .new-box:nth-child(2n){
+.new-right .new-box:nth-child(2n) {
   float: right;
 }
-.recommend{
+.recommend {
   position: relative;
   display: block;
   background-color: #fff;
@@ -111,4 +111,76 @@
 
 .blue {
   color: #76bd42;
+}
+/* 브랜드관000 */
+.brand {
+  position: relative;
+  display: block;
+  background-color: #f3f9f0;
+}
+.brand .slide-control {
+  margin-top: 25px;
+}
+.brand-slide {
+  position: relative;
+  display: block;
+}
+.brand-box {
+  position: relative;
+  display: block;
+  width: 285px;
+  height: 285px;
+  background-color: #fff;
+  padding: 35px 30px;
+}
+.brand-box a {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.brand-box a img {
+  position: relative;
+  display: inline-block;
+}
+
+.brand-box a p {
+  position: relative;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.brand-info {
+  position: relative;
+  display: block;
+}
+
+.brand-info > li {
+  position: relative;
+  display: block;
+  width: 50%;
+  border-right: 1px solid #e3e3e3;
+  float: left;
+}
+.brand-info > li:last-child{
+  border: 0;
+}
+.brand-info-title {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.brand-info-value {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+}
+.brand .section-bt{
+  margin-top: 20px;
 }
