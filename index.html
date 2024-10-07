@@ -656,8 +656,58 @@
           <button class="slide-next"></button>
         </div>
       </section>
-      <!-- 제출요리 -->
-      <section class="season"></section>
+      <!-- 제철요리 -->
+      <section class="season">
+      <div class="container">
+        <h2 class="section-title">제철제맛 가득한 <b>요리</b></h2>
+        <div class="season-wrap clearfix">
+          <!-- 왼쪽 -->
+          <div class="season-left">
+            <a href="#">
+              <img src="images/cook_main.jpg" alt="요리" />
+              <div class="season-info">
+                <h3>요리방법</h3>
+                <p>
+                  <span>촉촉 황태채와 탱글탱글 도토리면을 호로록</span>
+                  <b>황태채 도토리비빔면</b>
+                </p>
+              </div>
+            </a>
+          </div>
+          <!-- 오른쪽 -->
+          <div class="season-right">
+            <div class="season-list">
+              <ul class="season-good-list" id="data-season" data-scrollbar>
+                <!-- js -->
+                <!-- <li>
+                  <div class="season-good clearfix">
+                    <input type="checkbox" id="ch0" class="season-good-check season-item" value="가격">
+                    <label for="ch0" class="season-label"></label>
+                    <a href="#" class="season-gppd-img">
+                      <img src="images/" alt="">
+                    </a>
+                    <p class="season-good-info">
+                      <a href="${item.link}" class="season-good-title">${item.title}</a>
+                      <a href="${item.link}" class="season-good-price">
+                          <em>${priceToString(item.price)}</em>원
+                      </a>
+                    </p>
+                  </div>
+                 </li> -->
+              </ul>
+            </div>
+            <div class="season-total">
+              <div class="season-good-total">
+                <input type="checkbox" id="chkall" class="season-good-check">
+                <label for="chkall" class="season-label">라벨</label>
+                전체선택 <em id="buy-total">5</em>
+              </div>
+              <a href="#" class="buy-good">총 <em id="buy-total-money">49,500</em>원 장바구니 담기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
       <!-- 이용후기 -->
       <section class="review"></section>
       <!-- 커뮤니티 -->
