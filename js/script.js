@@ -37,6 +37,8 @@ window.addEventListener("load", function () {
       BANNER_ARR = obj.bannerarr;
       // 제철요리
       SEASON_GOOD = obj.seasongood;
+      // 이용후기
+      REVIEW_ARR = obj.review;
       // ==================================================================
       // 비주얼을 화면에 배치
       showVisual();
@@ -58,6 +60,8 @@ window.addEventListener("load", function () {
       showBannerArr();
       // 제철요리 화면배치
       showSeasonGood();
+      // 이용후기 화면배치
+      showReviewArr();
     }
   };
   //   자료호출
@@ -99,6 +103,9 @@ window.addEventListener("load", function () {
   // 제철요리 목록
   let SEASON_GOOD;
   let seasonTag = this.document.getElementById("data-season");
+  // 이용후기 목록
+  let REVIEW_ARR;
+  let reviewTag = this.document.getElementById("data-review");
   // ==============================================
   // 비주얼 화면 출력 기능
   function showVisual() {
@@ -618,6 +625,56 @@ window.addEventListener("load", function () {
     });
     seasonTag.innerHTML = html;
     Scrollbar.initAll(); // smooth scrollbar 적용
+  }
+  // 이용후기 화면 출력 기능
+  function showReviewArr() {
+    let html = `
+    <div class="swiper sw-review">
+    <div class="swiper-wrapper">
+    `;
+    // 데이터 처리 부분
+    REVIEW_ARR.forEach(function (item) {
+      const tag = `
+      <div class="swiper-slide">
+<div class="review-box">
+    <a href="${item.link}">
+        <div class= "review-box-desc">
+            <span class= " review-box-title">
+                ${item.title}
+            </span>
+            <span class="review-box-star"> ${item.star} </span>
+            <span class="review-box-img">
+                <img src="images/${item.pic}" alt="${item.title}"/>
+            </span>
+        </div>
+        <p class="review-box-txt">
+            ${item.txt}
+        </p>
+        <span class="review-box-user">${item.user} (${item.shop})</span>
+    </a>
+</div>
+</div>
+      `;
+      html += tag;
+    });
+    html += `
+    </div>
+    </div>
+    `;
+    reviewTag.innerHTML = html;
+    const swReview = new Swiper(".sw-review" , {
+      slidesPerView: 3,
+      spaceBetween: 16,
+      slidesPerGroup: 3,
+      navigation: {
+        prevEl: ".review .slide-prev",
+        nextEl: ".review .slide-next",
+      },
+      pagination: {
+        el: ".review .slide-pg",
+        type: "fraction",
+      },
+    })
   }
   //   ==========================end
 });

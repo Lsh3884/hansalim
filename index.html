@@ -55,9 +55,11 @@
     <link rel="stylesheet" href="css/review.css" />
     <link rel="stylesheet" href="css/community.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/conArea.css">
     <script src="js/script.js"></script>
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
+
   </head>
   <body>
     <!-- 안내창 -->
@@ -709,7 +711,81 @@
       </div>
       </section>
       <!-- 이용후기 -->
-      <section class="review"></section>
+      <section class="review">
+        <div class="container">
+          <div class="layout-wrap clearfix">
+            <div class="layout-left">
+              <h2 class="section-title section-bar">
+                조합원의 생생한<br />
+                <b>이용후기</b>
+              </h2>
+              <p class="section-title-text">
+                이웃 조합원은 <br />
+                어떤 물품을 구매했을까요?
+              </p>
+              <div class="slide-control">
+                <div class="slide-pg">1/4</div>
+                <button class="slide-prev">이전</button>
+                <button class="slide-next">다음</button>
+              </div>
+            </div>
+            <div class="layout-right">
+              <!-- 이용후기 슬라이드 -->
+              <div class="review-slide" id="data-review">
+                <!-- 외부 리뷰 데이터 연동 출력 js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 배송 -->
+      <section class="conWrap mainNavi mgt50">
+        <div class="container">
+          <ul class="conArea">
+            <li class="naviItem tagNew">
+              <!-- 'New'택 생성: 클래스'tagNew'기입 -->
+              <a href="#">
+                <dl class="naviItemText icon04">
+                  <dt>정기공급</dt>
+                  <dd>늘 이용하는 물품<br />주문 한번에 계속 받아보세요.</dd>
+                </dl>
+              </a>
+            </li>
+            <li class="naviItem">
+              <a href="#">
+                <dl class="naviItemText icon01">
+                  <dt>택배공급</dt>
+                  <dd>가족, 지인 집으로<br />물품을 보내보세요.</dd>
+                </dl>
+              </a>
+            </li>
+            <li class="naviItem">
+              <a href="#">
+                <dl class="naviItemText icon02">
+                  <dt>사전예약</dt>
+                  <dd>시즌 물품들을<br />예약하고 받아보세요.</dd>
+                </dl>
+              </a>
+            </li>
+            <li class="naviItem">
+              <a href="#">
+                <dl class="naviItemText icon03">
+                  <dt>산지직송</dt>
+                  <dd>생산지에서<br />바로 보내드려요.</dd>
+                </dl>
+              </a>
+            </li>
+            <li class="naviItem">
+              <a href="#">
+                <dl class="naviItemText icon05">
+                  <dt>매장배달</dt>
+                  <dd>근처 매장에서<br />오늘 바로 보내드려요.</dd>
+                </dl>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
       <!-- 커뮤니티 -->
       <section class="community"></section>
       <!-- 하단 -->
