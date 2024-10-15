@@ -37,9 +37,13 @@ window.addEventListener("load", function () {
       BANNER_ARR = obj.bannerarr;
       // 제철요리
       SEASON_GOOD = obj.seasongood;
-      // 이용후기
+      // 리뷰
       REVIEW_ARR = obj.review;
-      // ==================================================================
+      // 공지사항
+      NOTICE_ARR = obj.notice;
+      // 물품소식
+      GOODNEWS_ARR = obj.goodnews;
+      // ================
       // 비주얼을 화면에 배치
       showVisual();
       //오늘의 물품 화면에 배치
@@ -54,14 +58,18 @@ window.addEventListener("load", function () {
       showPopularIcon();
       // 인기물품 목록 화면배치
       showPopularGood();
-      // 브랜드관 목록 화면배치
+      // 브랜드관 화면배치
       showBrandArr();
-      // 배너목록 화면배치
+      // 배너 화면배치
       showBannerArr();
       // 제철요리 화면배치
       showSeasonGood();
-      // 이용후기 화면배치
-      showReviewArr();
+      // 리뷰 화면배치
+      showReview();
+      // 공지사항 화면배치
+      showNotice();
+      // 물품소식 화면배치
+      showGoodNews();
     }
   };
   //   자료호출
@@ -94,7 +102,7 @@ window.addEventListener("load", function () {
   // json파일중에 인텍스번호 0을 할당
   let popularShow = 1;
   let popularGoodTag = this.document.getElementById("data-popular");
-  // 브랜드 물품 목록
+  // 브랜드관 목록
   let BRAND_ARR;
   let brandTag = this.document.getElementById("data-brand");
   // 배너 목록
@@ -102,10 +110,16 @@ window.addEventListener("load", function () {
   let bannerTag = this.document.getElementById("data-banner");
   // 제철요리 목록
   let SEASON_GOOD;
-  let seasonTag = this.document.getElementById("data-season");
-  // 이용후기 목록
+  let seosonTag = this.document.getElementById("data-season");
+  // 리뷰
   let REVIEW_ARR;
   let reviewTag = this.document.getElementById("data-review");
+  // 공지사항
+  let NOTICE_ARR;
+  let noticeTag = this.document.getElementById("data-notice");
+  // 물품소식
+  let GOODNEWS_ARR;
+  let goodNewsTag = this.document.getElementById("data-goodnews");
   // ==============================================
   // 비주얼 화면 출력 기능
   function showVisual() {
@@ -519,29 +533,29 @@ window.addEventListener("load", function () {
   function showBrandArr() {
     let html = `
     <div class="swiper sw-brand">
-    <div class="swiper-wrapper">
-    `;
+      <div class="swiper-wrapper">
+   `;
     BRAND_ARR.forEach(function (item) {
       // console.log(item);
       let tag = `
       <div class="swiper-slide">
-      <div class="brand-box">
-          <a href="${item.link}">
+              <div class="brand-box">
+                  <a href="${item.link}">
                       <img src="images/${item.pic}" alt="${item.name}"/>
-              <p>${item.name}</p>
-              <ul class="brand-info clearfix">
-                  <li>
-                      <span class="brand-info-title">${item.title1}</span>
-                      <span class="brand-info-value">${item.value1}</span>
-                  </li>
-                  <li>
-                      <span class="brand-info-title">${item.title2}</span>
-                      <span class="brand-info-value">${item.value2}</span>
-                  </li>
-              </ul>
-          </a>
-      </div>
-      </div>
+                      <p>${item.name}</p>
+                      <ul class="brand-info clearfix">
+                          <li>
+                              <span class="brand-info-title">${item.title1}</span>
+                              <span class="brand-info-value">${item.value1}</span>
+                          </li>
+                          <li>
+                              <span class="brand-info-title">${item.title2}</span>
+                              <span class="brand-info-value">${item.value2}</span>
+                          </li>
+                      </ul>
+                  </a>
+              </div>
+          </div>
       `;
       html += tag;
     });
@@ -567,17 +581,17 @@ window.addEventListener("load", function () {
   // 배너 화면 출력 기능
   function showBannerArr() {
     let html = `
-    <div class = "swiper sw-banner">
-    <div class = "swiper-wrapper">
+     <div class = "swiper sw-banner">
+  <div class = "swiper-wrapper">
     `;
     BANNER_ARR.forEach(function (item) {
       // console.log(item);
       let tag = `
       <div class="swiper-slide">
-        <a href="${item.link}">
-            <img src = "images/${item.image}" alt ="${item.title}"/>
-        </a>
-      </div>
+            <a href="${item.link}">
+                <img src = "images/${item.image}" alt ="${item.title}"/>
+            </a>
+        </div>
       `;
       html += tag;
     });
@@ -599,41 +613,112 @@ window.addEventListener("load", function () {
       },
     });
   }
-  // 제찰요리 화면 출력 기능
+  // 제철요리 화면 출력 기능
   function showSeasonGood() {
     let html = "";
     SEASON_GOOD.forEach(function (item, index) {
-      console.log(item, index);
+      // console.log(item, index);
       const tag = `
-      <li>
-      <div class="season-good clearfix">
-        <input type="checkbox" id="ch${index}" class="season-good-check season-item" value="${item.price}">
-        <label for="ch${index}" class="season-label"></label>
-        <a href="${item.link}" class="season-good-img">
-        <img src="images/${item.pic}" alt="${item.title}">
-        </a>
-        <p class="season-good-info">
-          <a href="${item.link}" class="season-good-title">${item.title}</a>
-          <a href="${item.link}" class="season-good-price">
-              <em>${priceToString(item.price)}</em>원
-          </a>
-        </p>
-      </div>
-      </li>
+        <li>
+                    <div class="season-good clearfix">
+                      <input type="checkbox" id="ch${index}" class="season-good-check season-item" value="${item.price}">
+                      <label for="ch${index}" class="season-label"></label>
+                      <a href="${item.link}" class="season-good-img">
+                        <img src="images/${item.pic}" alt="${item.title}">
+                      </a>
+                      <p class="season-good-info">
+                        <a href="${item.link}" class="season-good-title">${item.title}</a>
+                        <a href="${item.link}" class="season-good-price">
+                            <em>${priceToString(item.price)}</em>원
+                        </a>
+                      </p>
+                    </div>
+                   </li>
       `;
       html += tag;
     });
-    seasonTag.innerHTML = html;
+    seosonTag.innerHTML = html;
     Scrollbar.initAll(); // smooth scrollbar 적용
+    checkBoxFn();
+    showBuyGood();
   }
-  // 이용후기 화면 출력 기능
-  function showReviewArr() {
+  // 제철요리 전체 체크박스 기능
+  const buyTotal = this.document.getElementById("buy-total"); //총갯수
+  const bytTotalMoney = this.document.getElementById("buy-total-money");
+  let buyTotalCount = 0; // 기본값
+  let buyTotalMoneyPrice = 0; // 기본값
+  // 전체 체크박스 기능
+  const chkAll = this.document.getElementById("chkall");
+  chkAll.addEventListener("change", function () {
+    const chkArr = document.querySelectorAll(".season-item");
+    // console.log(chkArr);
+
+    if (chkAll.checked) {
+      // 전체 체크를 해야하는 경우
+      chkArr.forEach(function (item) {
+        // console.log(item);
+        item.checked = true;
+      });
+    } else {
+      chkArr.forEach(function (item) {
+        // console.log(item);
+        item.checked = false;
+      });
+    }
+    // 계산출력 기능 호출
+    showBuyGood();
+  });
+  // 체크박스 각각의 기능
+  function checkBoxFn() {
+    const chkArr = document.querySelectorAll(".season-item");
+    chkArr.forEach(function (item) {
+      // console.log(item);
+      item.addEventListener("change", function () {
+        // 계산출력 기능 호출
+        showBuyGood();
+      });
+    });
+  }
+  // 계산출력하는 기능 함수
+  function showBuyGood() {
+    // 체크가 된 값을 카운팅하고 더한다.
+    let count = 0; //체크된 상품의 수를 저장할 변수
+    let priceTotal = 0; //체크된 상품들의 총 가격을 저장할 변수
+    const chkArr = document.querySelectorAll(".season-item");
+    //모든 체크박스 요소를 가져와서 배열에 저장
+    chkArr.forEach(function (item) {
+      // console.log(item);
+      const state = item.checked; //현재 체크박스에 체크상태를 확인
+      // console.log(state);
+      if (state) {
+        // 체크박스가 되어있으면
+        count += 1; // 체크된 상품의 수를 증가 count++
+        // console.log(count);
+        const price = parseInt(item.value);
+        // console.log(price);
+        priceTotal += price;
+      }
+    });
+    // 체크된 상품의 수를 전역변수에 저장
+    buyTotalCount = count;
+    // console.log(buyTotalCount);
+    // 총가격을 전역변수에 저장
+    buyTotalMoneyPrice = priceTotal;
+    // console.log(buyTotalMoneyPrice);
+    // 체크된 갯수만큼 갯수 변경
+    buyTotal.innerHTML = buyTotalCount;
+    // 체크된 갯수만큼 금액 변경
+    bytTotalMoney.innerHTML = priceToString(buyTotalMoneyPrice);
+  }
+  // 리뷰 기능 함수
+  function showReview() {
     let html = `
     <div class="swiper sw-review">
     <div class="swiper-wrapper">
     `;
-    // 데이터 처리 부분
+    // 데이터처리
     REVIEW_ARR.forEach(function (item) {
+      // console.log(item);
       const tag = `
       <div class="swiper-slide">
 <div class="review-box">
@@ -659,10 +744,10 @@ window.addEventListener("load", function () {
     });
     html += `
     </div>
-    </div>
+</div>
     `;
     reviewTag.innerHTML = html;
-    const swReview = new Swiper(".sw-review" , {
+    const swReview = new Swiper(".sw-review", {
       slidesPerView: 3,
       spaceBetween: 16,
       slidesPerGroup: 3,
@@ -674,7 +759,75 @@ window.addEventListener("load", function () {
         el: ".review .slide-pg",
         type: "fraction",
       },
-    })
+    });
+  }
+  //공지사항 기능 함수
+  function showNotice() {
+    let html = "";
+    // 데이터 갱신
+    NOTICE_ARR.forEach(function (item) {
+      // console.log(item);
+      const tag = `
+        <li>
+            <a href="${item.link}">
+                <span>
+                    ${item.title}
+                </span><em>${item.date}</em>
+            </a>
+        </li>
+`;
+      html += tag;
+    });
+    noticeTag.innerHTML = html;
+  }
+  //물품소식 기능 함수
+  function showGoodNews() {
+    let html = "";
+    // 데이터 갱신
+    GOODNEWS_ARR.forEach(function (item) {
+      // console.log(item);
+      const tag = `
+        <li>
+            <a href="${item.link}">
+                <span>
+                    ${item.title}
+                </span><em>${item.date}</em>
+            </a>
+        </li>
+`;
+      html += tag;
+    });
+    goodNewsTag.innerHTML = html;
+  }
+  // 커뮤니티 탭메뉴
+  const tabBtArr = this.document.querySelectorAll(".community-bt");
+  // 탭내용
+  const tabConArr = this.document.querySelectorAll(".community-notice dd");
+  // 탭포커스
+  let tabFocusIndex = 0;
+  // 탭 버튼 클릭처리 기능
+  tabBtArr.forEach(function (item, index) {
+    // console.log(item, index);
+    item.addEventListener("click", function () {
+      // console.log(item ,index);
+      tabFocusIndex = index;
+      // console.log(tabFocusIndex);
+      tabFocusFn();
+    });
+  });
+  // 탭포커스가 클릭됐을때 보여지는 함수 생성
+  function tabFocusFn() {
+    tabBtArr.forEach(function (item) {
+      // console.log(item);
+      item.classList.remove("community-bt-active");
+    });
+    tabConArr.forEach(function (item) {
+      // console.log(item);
+      item.classList.remove("community-visible-active")
+    });
+    // 인덱스에 해당하는것만 적용
+    tabBtArr[tabFocusIndex].classList.add("community-bt-active")
+    tabConArr[tabFocusIndex].classList.add("community-visible-active")
   }
   //   ==========================end
 });
